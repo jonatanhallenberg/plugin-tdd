@@ -16,8 +16,17 @@ Komma igång
 
 `docker-compose exec wordpress bash -c "/var/www/html/wp-content/plugins/[pluginnamn]/bin/install-wp-tests.sh wordpress_test root 'somewordpress' db latest"`
 
-5. För att testa ditt plugin, kör:
+5. Ladda ner polyfill för PHPUnit och lägg i wordpress/vendor:
+
+https://github.com/Yoast/PHPUnit-Polyfills
+
+
+6. Lägg till i tests/bootstrap.php:
+
+`define('WP_TESTS_PHPUNIT_POLYFILLS_PATH', '../../../vendor/PHPUnit-Polyfills/phpunitpolyfills-autoload.php')`
+
+7. För att testa ditt plugin, kör:
 
 `docker-compose exec wordpress bash -c "cd /var/www/html/wp-content/plugins/[pluginnamn]; phpunit"`
 
-6. För att se din Wordpress-site. Gå till http://localhost:8001
+8. För att se din Wordpress-site. Gå till http://localhost:8001
