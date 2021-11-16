@@ -20,7 +20,6 @@ Komma igång
 
 https://github.com/Yoast/PHPUnit-Polyfills
 
-
 6. Lägg till i tests/bootstrap.php:
 
 `define('WP_TESTS_PHPUNIT_POLYFILLS_PATH', '../../../vendor/PHPUnit-Polyfills/phpunitpolyfills-autoload.php')`
